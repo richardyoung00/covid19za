@@ -9,7 +9,8 @@ git add "../data/covid19za_provincial_cumulative_timeline_vaccination.csv" || ex
 
 curr_date=$(date +%Y-%m-%d) || exit 1;
 
-git commit -m "Scrape and update provincial vaccination data for $curr_date" || exit 1;
+title="Scrape and update provincial vaccination data for $curr_date"
+git commit -m "$title" || exit 1;
 
 commit_hash=`git rev-parse HEAD` || exit 1;
 
@@ -21,6 +22,6 @@ git cherry-pick $commit_hash || exit 1;
 
 git push || exit 1;
 
-gh pr create -f || exit 1;
+gh pr create --title "$title" --body "" || exit 1;
 
 git checkout provincial_vaccine_data || exit 1;
