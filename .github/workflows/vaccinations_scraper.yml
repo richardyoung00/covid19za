@@ -21,7 +21,7 @@ jobs:
         run: |
           git config --local user.name github-actions
           git config --local user.email "action@github.com"
-          git add data/mobility/google_mobility/mobility_report_ZA.csv
+          git add data/covid19za_provincial_cumulative_timeline_vaccination.csv
           if [[ "$(git status --porcelain)" != "" ]]; then
               git commit -m "Update Provincial Vaccinations Data" -a
               git push origin provincial_vaccine_data
