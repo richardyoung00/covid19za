@@ -15,8 +15,8 @@ jobs:
         run: pip install pandas 
       - name: Install requests
         run: pip install requests 
-      - name: Download and build reports 
-        run: cd scripts/;python sacaronavirus_provincial_vaccine.py
+      - name: Scrape data 
+        run: cd scripts/;python sacoronavirus_provincial_vaccine.py
       - name: Commit changes
         run: |
           git config --local user.name github-actions
