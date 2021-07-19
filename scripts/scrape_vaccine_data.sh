@@ -22,6 +22,6 @@ git cherry-pick $commit_hash || exit 1;
 
 git push || exit 1;
 
-gh pr create --title "$title" --body "" || exit 1;
+# gh pr create --title "$title" --body "" || exit 1;
 
 git checkout provincial_vaccine_data || exit 1;

@@ -38,9 +38,10 @@ def fetch_source(data_set, label, filter = None):
 
         res = requests.post("https://wabi-west-europe-api.analysis.windows.net/public/reports/querydata?synchronous=true",headers=headers, json=body)
         data = res.json()
+        # print(json.dumps(data, indent=4))
+
         rows = data["results"][0]["result"]["data"]["dsr"]["DS"][0]["PH"][0]["DM0"]
 
-        # print(json.dumps(data, indent=4))
 
         for r in rows:
             data = r['C']
